@@ -70,23 +70,25 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="update-date">Last updated: April 4, 2026</p>
+        <p class="update-date">Last updated: April 17, 2026</p>
 
         <p>PillChime is a utility app that helps users manage daily medication reminders. We take your privacy seriously. Please read this privacy policy carefully before using the app.</p>
 
         <div class="highlight">
-            <p>Our commitment: PillChime does not collect, upload, or share any of your personal data. All your information is stored exclusively on your own device.</p>
+            <p>Our commitment: PillChime does not collect your name, contact information, medication content, or any information that identifies you. We collect only a minimal amount of anonymous usage events (such as "first medication created") via TelemetryDeck, an EU GDPR-compliant service, to improve the product. These events are never linked to your identity.</p>
         </div>
 
         <h2>1. Information We Collect</h2>
-        <p>PillChime does not collect any personal information. Specifically:</p>
+        <p>PillChime does not collect any information that identifies you. Specifically:</p>
         <ul>
             <li>No account registration required</li>
             <li>No collection of names, phone numbers, email addresses, or other personal identifiers</li>
             <li>No location tracking</li>
-            <li>No device identifier collection</li>
-            <li>No third-party analytics or advertising SDKs</li>
+            <li>No hardware identifiers (IDFA / IDFV) collected</li>
+            <li>No collection of your medication names, dosages, schedules, or any health data</li>
+            <li>No advertising SDKs</li>
         </ul>
+        <p>The only information collected is anonymous event telemetry used to measure product activation and improve user experience. See "6. Anonymous Usage Statistics" below.</p>
 
         <h2>2. Data Storage</h2>
         <p>All data you enter in PillChime — including medication details, reminder times, and dose records — is stored locally on your iPhone using Apple's SwiftData framework.</p>
@@ -104,21 +106,49 @@
         <p>PillChime uses iOS system alarms (AlarmKit) and local notifications to remind you to take your medication on time. These reminders are processed entirely on your device and do not involve any network communication.</p>
 
         <h2>5. Third-Party Services</h2>
-        <p>PillChime does not integrate any third-party services, including but not limited to:</p>
+        <p>PillChime integrates <strong>only one</strong> privacy-focused third-party service:</p>
+        <p><strong>TelemetryDeck (anonymous product analytics)</strong></p>
         <ul>
-            <li>No third-party analytics tools</li>
-            <li>No advertising services</li>
-            <li>No social login</li>
-            <li>No cloud storage services</li>
+            <li>Purpose: helps us understand which features are used so we can improve the experience</li>
+            <li>What is collected: see the next section</li>
+            <li>Provider: TelemetryDeck GmbH, headquartered in Augsburg, Germany</li>
+            <li>Servers located in the EU (Germany / Netherlands), protected by the General Data Protection Regulation (GDPR)</li>
+            <li>Never linked to your identity, health data, or medication information</li>
+        </ul>
+        <p>PillChime does not use:</p>
+        <ul>
+            <li>Advertising services</li>
+            <li>Social login</li>
+            <li>Cloud storage services (note: a future version may integrate iCloud sync; this policy will be updated accordingly)</li>
         </ul>
 
-        <h2>6. Children's Privacy</h2>
+        <h2>6. Anonymous Usage Statistics (TelemetryDeck)</h2>
+        <p>To understand whether PillChime meets user needs, we collect a small amount of anonymous usage events via TelemetryDeck.</p>
+        <p><strong>What we collect:</strong></p>
+        <ul>
+            <li>A random UUID generated once per install (contains no personal information; a new UUID is generated if you reinstall the app)</li>
+            <li>Event names (e.g., "first medication created", "first check-in")</li>
+            <li>App version</li>
+            <li>System language</li>
+            <li>Event timestamp</li>
+        </ul>
+        <p><strong>What we do not collect:</strong></p>
+        <ul>
+            <li>Your name, email, phone number, or Apple ID</li>
+            <li>Your medication names, dosages, or schedules</li>
+            <li>Any health or medical information</li>
+            <li>Your location</li>
+            <li>Hardware identifiers (IDFA / IDFV)</li>
+        </ul>
+        <p>Data is stored on TelemetryDeck servers in Germany / Netherlands under EU GDPR protection. When you uninstall PillChime, all local data and the anonymous UUID are deleted, and historical event data on TelemetryDeck can no longer be traced back to you.</p>
+
+        <h2>7. Children's Privacy</h2>
         <p>PillChime is not designed for children under 13 and does not knowingly collect personal information from children.</p>
 
-        <h2>7. Changes to This Policy</h2>
+        <h2>8. Changes to This Policy</h2>
         <p>If we make changes to this privacy policy, we will post the updated version on this page and update the "Last updated" date. We recommend reviewing this policy periodically.</p>
 
-        <h2>8. Contact Us</h2>
+        <h2>9. Contact Us</h2>
         <p>If you have any questions or suggestions regarding this privacy policy, please contact us at:</p>
         <p>Email: miaoshu411@gmail.com</p>
 
