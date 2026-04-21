@@ -65,17 +65,24 @@
             font-size: 14px;
             color: #8E8E93;
         }
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>隐私政策</h1>
-        <p class="update-date">最后更新日期：2026 年 4 月 17 日</p>
+        <p class="update-date">最后更新日期：2026 年 4 月 21 日</p>
 
         <p>药准准（以下简称"本应用"）是一款帮助用户管理日常服药提醒的工具类应用。我们非常重视您的隐私保护，请您在使用本应用前仔细阅读本隐私政策。</p>
 
         <div class="highlight">
-            <p>核心承诺：本应用不收集您的姓名、联系方式、药物内容或任何可识别您身份的信息。仅通过欧盟 GDPR 合规服务 TelemetryDeck 收集极少量匿名事件（如"首次创建药物"）用于改进产品，不与您的身份关联。</p>
+            <p>核心承诺：本应用的开发者端不收集您的姓名、联系方式、药物内容或任何可识别您身份的信息。仅通过欧盟 GDPR 合规服务 TelemetryDeck 收集极少量匿名事件（如"首次创建药物"）用于改进产品，不与您的身份关联。您的药物与提醒数据默认仅存储在本机；若您选择开启 iCloud 同步（可选），数据将存储于您本人的 Apple iCloud 私有空间，开发者仍无法访问——详见第六章。</p>
         </div>
 
         <h2>一、我们收集哪些信息</h2>
@@ -85,44 +92,97 @@
             <li>不收集姓名、手机号、邮箱等个人身份信息</li>
             <li>不收集位置信息</li>
             <li>不收集 IDFA / IDFV 等硬件标识符</li>
-            <li>不收集您的药物名称、剂量、服药时间或任何健康数据</li>
+            <li>开发者服务器不收集您的药物名称、剂量、服药时间或任何健康数据（若您开启 iCloud 同步，数据传输至您本人的 Apple iCloud 账号，开发者同样无法访问——详见第六章）</li>
             <li>不使用任何广告 SDK</li>
         </ul>
-        <p>唯一收集的是匿名事件遥测数据，用于衡量产品活性和改进用户体验，详见下方"六、匿名使用统计"章节。</p>
+        <p>唯一收集的是匿名事件遥测数据，用于衡量产品活性和改进用户体验，详见下方"七、匿名使用统计"章节。</p>
 
         <h2>二、数据存储</h2>
-        <p>您在本应用中录入的药物信息、提醒时间、服药记录等数据，全部存储在您的 iPhone 本地设备上，使用 Apple 提供的 SwiftData 框架进行存储。</p>
+        <p>您在本应用中录入的药物信息、提醒时间、服药记录等数据，默认存储在您的 iPhone 本地设备上，使用 Apple 提供的 SwiftData 框架进行存储。</p>
+
+        <p><strong>本地模式（默认）：</strong></p>
         <ul>
-            <li>数据不会上传到任何服务器</li>
+            <li>数据不会上传到任何开发者运营的服务器</li>
             <li>数据不会与任何第三方共享</li>
-            <li>数据不会在设备之间同步</li>
-            <li>卸载本应用后，所有数据将被永久删除</li>
+            <li>卸载本应用后，本机上的数据将被永久删除</li>
+        </ul>
+
+        <p><strong>iCloud 同步（可选，您可随时开启或关闭）：</strong></p>
+        <ul>
+            <li>数据通过 Apple CloudKit 同步至您本人的 iCloud 私有数据库（Private Database）</li>
+            <li>仅在您使用同一 Apple ID 登录的苹果设备（iPhone / iPad）之间保持一致</li>
+            <li>开发者（药准准）无法访问、读取或导出您 iCloud 中的任何数据</li>
+            <li>数据受 Apple 标准 iCloud 加密保护；若您开启 Apple 高级数据保护（Advanced Data Protection），则为端到端加密</li>
+            <li>详见下方"六、iCloud 同步（可选）"章节</li>
         </ul>
 
         <h2>三、相机权限</h2>
-        <p>本应用可能请求使用您的相机，仅用于拍摄药物照片以便识别。拍摄的照片仅保存在本地，不会上传到任何服务器。您可以随时在系统设置中关闭此权限。</p>
+        <p>本应用可能请求使用您的相机，仅用于拍摄药物照片以便识别。拍摄的照片仅保存在本地（若您开启 iCloud 同步，照片同样仅同步至您本人的 iCloud 账号），不会上传到任何开发者服务器。您可以随时在系统设置中关闭此权限。</p>
 
         <h2>四、通知权限</h2>
         <p>本应用使用 iOS 系统闹钟（AlarmKit）和本地通知来提醒您按时服药。这些提醒完全在您的设备本地处理，不涉及任何网络通信。</p>
 
         <h2>五、第三方服务</h2>
-        <p>本应用仅集成<strong>一个</strong>隐私合规的第三方服务：</p>
-        <p><strong>TelemetryDeck（匿名产品分析）</strong></p>
+        <p>本应用集成以下第三方服务：</p>
+
+        <p><strong>1. TelemetryDeck（匿名产品分析，始终启用）</strong></p>
         <ul>
             <li>用途：帮助我们了解哪些功能被使用，改进用户体验</li>
-            <li>收集内容：详见下一章节</li>
+            <li>收集内容：详见第七章"匿名使用统计"</li>
             <li>提供方：TelemetryDeck GmbH，总部位于德国奥格斯堡</li>
             <li>服务器位于欧盟（德国 / 荷兰），受欧盟通用数据保护条例（GDPR）保护</li>
             <li>不与您的身份、健康数据或药物信息关联</li>
         </ul>
+
+        <p><strong>2. Apple iCloud / CloudKit（云端同步，可选）</strong></p>
+        <ul>
+            <li>用途：在您同一 Apple ID 登录的多台苹果设备之间同步药物与提醒数据</li>
+            <li>提供方：Apple Inc.</li>
+            <li>数据存储于您本人的 iCloud 私有数据库（Private Database），由 Apple 标准 iCloud 加密保护</li>
+            <li>开发者（药准准）无法读取您 iCloud 中的任何数据</li>
+            <li>受 Apple 隐私政策管辖：<a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></li>
+            <li>详见第六章"iCloud 同步（可选）"</li>
+        </ul>
+
         <p>本应用不使用：</p>
         <ul>
             <li>广告服务</li>
             <li>社交登录</li>
-            <li>云存储服务（注：未来版本可能集成 iCloud 同步，届时会更新本政策）</li>
+            <li>第三方云存储（如 AWS / 阿里云 / 腾讯云等）</li>
         </ul>
 
-        <h2>六、匿名使用统计（TelemetryDeck）</h2>
+        <h2>六、iCloud 同步（可选）</h2>
+        <p>为方便您在多台苹果设备之间保持药物与提醒数据一致，本应用提供可选的 iCloud 同步功能。</p>
+
+        <p><strong>启用与关闭：</strong></p>
+        <ul>
+            <li>启用：iOS 系统设置 → Apple ID → iCloud → 药准准 中开启"同步此 iPhone"</li>
+            <li>关闭：在同一路径下可随时关闭；关闭后本机已录入的数据保留，不会丢失</li>
+        </ul>
+
+        <p><strong>同步内容：</strong></p>
+        <ul>
+            <li>您录入的药物信息（名称、剂量、备注、药物照片）</li>
+            <li>闹钟与提醒时间配置</li>
+            <li>打卡（服药）记录</li>
+        </ul>
+
+        <p><strong>我们希望您清楚的事实：</strong></p>
+        <ul>
+            <li>同步使用 Apple 的 CloudKit <strong>Private Database</strong>（私有数据库），数据存储于您本人 Apple ID 下的 iCloud 空间</li>
+            <li>仅在您同一 Apple ID 登录的苹果设备（iPhone / iPad）之间同步，不对外共享</li>
+            <li>开发者（药准准）<strong>无法</strong>访问、读取、修改或导出您 iCloud 中的任何数据——CloudKit Private Database 对应用开发者不可见，这是 Apple 平台的设计</li>
+            <li>数据受 Apple 标准 iCloud 加密保护；若您在 iOS 系统设置中开启"高级数据保护（Advanced Data Protection）"，则为端到端加密，连 Apple 自身也无法读取</li>
+            <li>iCloud 同步由 Apple 按其隐私政策管理</li>
+        </ul>
+
+        <p><strong>关于卸载：</strong></p>
+        <ul>
+            <li>卸载本应用会删除本机上的数据</li>
+            <li>iCloud 中已同步的副本<strong>不会</strong>自动删除——您可通过在新设备（或重装本应用）登录同一 Apple ID 恢复，或在 iOS 系统设置 → Apple ID → iCloud → 管理账户存储 → 药准准 中手动清除</li>
+        </ul>
+
+        <h2>七、匿名使用统计（TelemetryDeck）</h2>
         <p>为了了解产品是否满足用户需求，我们通过 TelemetryDeck 收集少量匿名使用事件。</p>
         <p><strong>我们收集：</strong></p>
         <ul>
@@ -142,13 +202,14 @@
         </ul>
         <p>数据存储在 TelemetryDeck 位于德国 / 荷兰的服务器，受欧盟 GDPR 保护。卸载本应用后，所有本地数据与匿名 UUID 一并删除，TelemetryDeck 端的历史事件数据也将无法追溯到您。</p>
 
-        <h2>七、儿童隐私</h2>
+        <h2>八、儿童隐私</h2>
         <p>本应用不针对 13 岁以下儿童设计，也不会有意收集儿童的个人信息。</p>
 
-        <h2>八、隐私政策的变更</h2>
+        <h2>九、隐私政策的变更</h2>
         <p>如果我们对本隐私政策进行修改，将在本页面发布更新后的版本，并更新"最后更新日期"。建议您定期查看本政策。</p>
+        <p>本次更新（2026 年 4 月 21 日）主要内容：新增可选的 iCloud 同步功能的完整披露；明确区分"本地模式"与"iCloud 同步"两种数据存储路径；在第三方服务中加入 Apple iCloud / CloudKit。</p>
 
-        <h2>九、联系我们</h2>
+        <h2>十、联系我们</h2>
         <p>如果您对本隐私政策有任何疑问或建议，请通过以下方式联系我们：</p>
         <p>邮箱：miaoshu411@gmail.com</p>
 

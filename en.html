@@ -65,64 +65,124 @@
             font-size: 14px;
             color: #8E8E93;
         }
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="update-date">Last updated: April 17, 2026</p>
+        <p class="update-date">Last updated: April 21, 2026</p>
 
         <p>PillChime is a utility app that helps users manage daily medication reminders. We take your privacy seriously. Please read this privacy policy carefully before using the app.</p>
 
         <div class="highlight">
-            <p>Our commitment: PillChime does not collect your name, contact information, medication content, or any information that identifies you. We collect only a minimal amount of anonymous usage events (such as "first medication created") via TelemetryDeck, an EU GDPR-compliant service, to improve the product. These events are never linked to your identity.</p>
+            <p>Our commitment: PillChime (as the developer) does not collect your name, contact information, medication content, or any information that identifies you. We collect only a minimal amount of anonymous usage events (such as "first medication created") via TelemetryDeck, an EU GDPR-compliant service, to improve the product. These events are never linked to your identity. Your medication and reminder data are stored locally by default; if you choose to enable iCloud sync (optional), the data is stored in your own Apple iCloud private space, which the developer still cannot access — see Section 6 for details.</p>
         </div>
 
-        <h2>1. Information We Collect</h2>
+        <h2>1. Information we collect</h2>
         <p>PillChime does not collect any information that identifies you. Specifically:</p>
         <ul>
             <li>No account registration required</li>
             <li>No collection of names, phone numbers, email addresses, or other personal identifiers</li>
             <li>No location tracking</li>
             <li>No hardware identifiers (IDFA / IDFV) collected</li>
-            <li>No collection of your medication names, dosages, schedules, or any health data</li>
+            <li>The developer's servers do not collect your medication names, dosages, schedules, or any health data (if you enable iCloud sync, data is transmitted to your own Apple iCloud account, which the developer likewise cannot access — see Section 6)</li>
             <li>No advertising SDKs</li>
         </ul>
-        <p>The only information collected is anonymous event telemetry used to measure product activation and improve user experience. See "6. Anonymous Usage Statistics" below.</p>
+        <p>The only information collected is anonymous event telemetry used to measure product activation and improve user experience. See Section 7, "Anonymous usage statistics", below.</p>
 
-        <h2>2. Data Storage</h2>
-        <p>All data you enter in PillChime — including medication details, reminder times, and dose records — is stored locally on your iPhone using Apple's SwiftData framework.</p>
+        <h2>2. Data storage</h2>
+        <p>All data you enter in PillChime — including medication details, reminder times, and dose records — is stored locally on your iPhone by default, using Apple's SwiftData framework.</p>
+
+        <p><strong>Local mode (default):</strong></p>
         <ul>
-            <li>Data is never uploaded to any server</li>
+            <li>Data is never uploaded to any developer-operated server</li>
             <li>Data is never shared with any third party</li>
-            <li>Data is not synced across devices</li>
-            <li>All data is permanently deleted when you uninstall the app</li>
+            <li>Local data is permanently deleted when you uninstall the app</li>
         </ul>
 
-        <h2>3. Camera Permission</h2>
-        <p>PillChime may request access to your camera solely for taking photos of medications for identification purposes. Photos are saved locally only and are never uploaded to any server. You can revoke this permission at any time in your device settings.</p>
+        <p><strong>iCloud sync (optional, you can enable or disable it at any time):</strong></p>
+        <ul>
+            <li>Data is synced to your own iCloud Private Database via Apple CloudKit</li>
+            <li>Data remains consistent only across Apple devices (iPhone / iPad) signed in with the same Apple ID</li>
+            <li>The developer (PillChime) cannot access, read, or export any data in your iCloud</li>
+            <li>Data is protected by standard Apple iCloud encryption; if you enable Apple's Advanced Data Protection, data becomes end-to-end encrypted</li>
+            <li>See Section 6, "iCloud sync (optional)", below for details</li>
+        </ul>
 
-        <h2>4. Notification Permission</h2>
+        <h2>3. Camera permission</h2>
+        <p>PillChime may request access to your camera solely for taking photos of medications for identification purposes. Photos are saved locally (if you enable iCloud sync, photos are synced only to your own Apple iCloud account) and are never uploaded to any developer server. You can revoke this permission at any time in your device settings.</p>
+
+        <h2>4. Notification permission</h2>
         <p>PillChime uses iOS system alarms (AlarmKit) and local notifications to remind you to take your medication on time. These reminders are processed entirely on your device and do not involve any network communication.</p>
 
-        <h2>5. Third-Party Services</h2>
-        <p>PillChime integrates <strong>only one</strong> privacy-focused third-party service:</p>
-        <p><strong>TelemetryDeck (anonymous product analytics)</strong></p>
+        <h2>5. Third-party services</h2>
+        <p>PillChime integrates the following third-party services:</p>
+
+        <p><strong>1. TelemetryDeck (anonymous product analytics, always on)</strong></p>
         <ul>
             <li>Purpose: helps us understand which features are used so we can improve the experience</li>
-            <li>What is collected: see the next section</li>
+            <li>What is collected: see Section 7, "Anonymous usage statistics"</li>
             <li>Provider: TelemetryDeck GmbH, headquartered in Augsburg, Germany</li>
             <li>Servers located in the EU (Germany / Netherlands), protected by the General Data Protection Regulation (GDPR)</li>
             <li>Never linked to your identity, health data, or medication information</li>
         </ul>
+
+        <p><strong>2. Apple iCloud / CloudKit (cloud sync, optional)</strong></p>
+        <ul>
+            <li>Purpose: syncs your medication and reminder data across Apple devices signed in with the same Apple ID</li>
+            <li>Provider: Apple Inc.</li>
+            <li>Data is stored in your own iCloud Private Database, protected by standard Apple iCloud encryption</li>
+            <li>The developer (PillChime) cannot read any data in your iCloud</li>
+            <li>Governed by Apple's privacy policy: <a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></li>
+            <li>See Section 6, "iCloud sync (optional)", for details</li>
+        </ul>
+
         <p>PillChime does not use:</p>
         <ul>
             <li>Advertising services</li>
             <li>Social login</li>
-            <li>Cloud storage services (note: a future version may integrate iCloud sync; this policy will be updated accordingly)</li>
+            <li>Third-party cloud storage (e.g., AWS, Alibaba Cloud, Tencent Cloud)</li>
         </ul>
 
-        <h2>6. Anonymous Usage Statistics (TelemetryDeck)</h2>
+        <h2>6. iCloud sync (optional)</h2>
+        <p>To help you keep your medication and reminder data consistent across multiple Apple devices, PillChime offers an optional iCloud sync feature.</p>
+
+        <p><strong>Enabling and disabling:</strong></p>
+        <ul>
+            <li>Enable: iOS Settings → Apple ID → iCloud → PillChime → turn on "Sync this iPhone"</li>
+            <li>Disable: the same path allows you to turn it off at any time; data already on your device is retained and not lost</li>
+        </ul>
+
+        <p><strong>What is synced:</strong></p>
+        <ul>
+            <li>Your medication details (name, dose, notes, medication photos)</li>
+            <li>Alarm and reminder time configuration</li>
+            <li>Dose / check-in records</li>
+        </ul>
+
+        <p><strong>What we want you to clearly understand:</strong></p>
+        <ul>
+            <li>Sync uses Apple's CloudKit <strong>Private Database</strong>; data is stored in your own iCloud space under your Apple ID</li>
+            <li>Data is only synced between Apple devices (iPhone / iPad) signed in with the same Apple ID and is not shared externally</li>
+            <li>The developer (PillChime) <strong>cannot</strong> access, read, modify, or export any data in your iCloud — CloudKit Private Database is not visible to app developers by Apple's platform design</li>
+            <li>Data is protected by standard Apple iCloud encryption; if you enable Advanced Data Protection in iOS Settings, the data is end-to-end encrypted, and not even Apple itself can read it</li>
+            <li>iCloud sync is managed by Apple in accordance with its privacy policy</li>
+        </ul>
+
+        <p><strong>About uninstalling:</strong></p>
+        <ul>
+            <li>Uninstalling PillChime removes the local copy on that device</li>
+            <li>Copies already synced to iCloud are <strong>not</strong> automatically deleted — you can restore them by reinstalling PillChime or signing in on a new device with the same Apple ID, or manually remove them via iOS Settings → Apple ID → iCloud → Manage Account Storage → PillChime</li>
+        </ul>
+
+        <h2>7. Anonymous usage statistics (TelemetryDeck)</h2>
         <p>To understand whether PillChime meets user needs, we collect a small amount of anonymous usage events via TelemetryDeck.</p>
         <p><strong>What we collect:</strong></p>
         <ul>
@@ -142,13 +202,14 @@
         </ul>
         <p>Data is stored on TelemetryDeck servers in Germany / Netherlands under EU GDPR protection. When you uninstall PillChime, all local data and the anonymous UUID are deleted, and historical event data on TelemetryDeck can no longer be traced back to you.</p>
 
-        <h2>7. Children's Privacy</h2>
+        <h2>8. Children's privacy</h2>
         <p>PillChime is not designed for children under 13 and does not knowingly collect personal information from children.</p>
 
-        <h2>8. Changes to This Policy</h2>
+        <h2>9. Changes to this policy</h2>
         <p>If we make changes to this privacy policy, we will post the updated version on this page and update the "Last updated" date. We recommend reviewing this policy periodically.</p>
+        <p>This update (April 21, 2026) primarily introduces full disclosure of the newly added optional iCloud sync feature, explicitly separates "local mode" and "iCloud sync" as two data-storage paths, and adds Apple iCloud / CloudKit to the list of third-party services.</p>
 
-        <h2>9. Contact Us</h2>
+        <h2>10. Contact us</h2>
         <p>If you have any questions or suggestions regarding this privacy policy, please contact us at:</p>
         <p>Email: miaoshu411@gmail.com</p>
 
